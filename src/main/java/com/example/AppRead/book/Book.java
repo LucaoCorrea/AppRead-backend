@@ -1,13 +1,11 @@
 package com.example.AppRead.book;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.text.DateFormat;
 
@@ -16,20 +14,18 @@ import java.text.DateFormat;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "_book")
+@EntityListeners(AuditingEntityListener.class)
 public class Book {
 
     @Id
     @GeneratedValue
     private Integer id;
     private String name;
-
     private String cover;
     private String writer;
-
+    private String description;
     private int num;
     private String pub;
-
     private String year;
 
 }
