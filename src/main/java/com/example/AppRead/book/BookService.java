@@ -11,9 +11,10 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class BookService {
     private final BookRepository repository;
+    private BookRequest request;
 
     public void save(BookRequest request) {
-        var exercise = Book.builder()
+        var book = Book.builder()
                 .id(request.getId())
                 .name(request.getName())
                 .cover(request.getCover())
@@ -22,12 +23,12 @@ public class BookService {
                 .num(request.getNum())
                 .pub(request.getPub())
                 .year(request.getYear())
+                .pdf(request.getPdf())
                 .build();
-        repository.save(exercise);
+        repository.save(book);
     }
 
     public void update(BookRequest request) {
-
         Optional<Book> optionalBook = repository.findById(request.getId());
         if (optionalBook.isPresent()) {
             Book book = optionalBook.get();
@@ -38,13 +39,14 @@ public class BookService {
             book.setYear(request.getYear());
             book.setWriter(request.getWriter());
             book.setPub(request.getPub());
+            book.setPdf(request.getPdf());
         } else {
             throw new EntityNotFoundException();
         }
 
     }
 
-        public List<Book> findAll() {
+    public List<Book> findAll() {
         return repository.findAll();
     }
 
