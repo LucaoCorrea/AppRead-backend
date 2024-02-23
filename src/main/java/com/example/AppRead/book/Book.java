@@ -20,6 +20,7 @@ public class Book {
     @Id
     @GeneratedValue
     private Integer id;
+    private String pdf;
     private String name;
     private String cover;
     private String writer;

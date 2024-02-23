@@ -22,24 +22,24 @@ public class BookController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Book>> getAllExercises() {
+    public ResponseEntity<List<Book>> getAllBooks() {
         return ResponseEntity.ok(service.findAll());
     }
 
     @GetMapping("/search")
-    public ResponseEntity<List<Book>> getExerciseByName(String name, String category) {
-        return ResponseEntity.ok(service.findBySearch(name, category));
+    public ResponseEntity<List<Book>> getBookByName(String name, String write) {
+        return ResponseEntity.ok(service.findBySearch(name, write));
     }
 
     @PutMapping
     @Transactional
-    public ResponseEntity<?> updateExercise(@RequestBody @Valid BookRequest request) {
+    public ResponseEntity<?> updateBook(@RequestBody @Valid BookRequest request) {
         service.update(request);
         return ResponseEntity.ok(request);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteExercise(@PathVariable Integer id) {
+    public ResponseEntity<?> deleteBook(@PathVariable Integer id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }

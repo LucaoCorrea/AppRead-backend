@@ -11,6 +11,7 @@ import lombok.Setter;
 public class BookRequest {
     private Integer id;
     private String name;
+    private String pdf;
     private String cover;
     private String writer;
     private String description;
