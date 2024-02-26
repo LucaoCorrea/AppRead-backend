@@ -1,13 +1,22 @@
-[
-    {
-        "id": 1,
-        "pdf": "https://escolareginaaltman.com.br/wp-content/uploads/2020/04/Harry-Potter-e-a-pedra-filosofal.pdf",
-        "name": "Harry Potter e a Pedra Filosofal",
-        "cover": "https://m.media-amazon.com/images/I/518mqZ7A31L._SY445_SX342_.jpg",
-        "writer": "J.K Rowling",
-        "description": " O livro conta a história de Harry Potter, um órfão criado pelos tios que descobre, em seu décimo primeiro aniversário, que é um bruxo.",
-        "num": 172,
-        "pub": "Rocco",
-        "year": "26 de junho de 1997"
-    }
-]
+{
+    "id": "1",
+    "name": "Harry Potter e a Pedra Filosofal",
+    "pdf": "https://escolareginaaltman.com.br/wp-content/uploads/2020/04/Harry-Potter-e-a-pedra-filosofal.pdf",
+    "cover": "https://m.media-amazon.com/images/I/518mqZ7A31L._SY445_SX342_.jpg",
+    "writer": "J.K Rowling",
+    "description": " O livro conta a história de Harry Potter, um órfão criado pelos tios que descobre, em seu décimo primeiro aniversário, que é um bruxo.",
+    "num": 172,
+    "pub": "Rocco",
+    "year": "26 de junho de 1997"
+},
+{
+  "id": "2",
+  "name": "Crepúsculo Eclipse",
+  "pdf": "https://cabana-on.com/Ler/wp-content/uploads/2017/08/Stephenie-Meyer-Eclipse.pdf",
+  "cover": "https://m.media-amazon.com/images/I/31pJMbdC6kL._SY445_SX342_.jpg",
+  "writer": " Stephenie Meyer",
+  "description": " Eclipse é o terceiro livro da série Twilight de Stephenie Meyer, precedido por Crepúsculo e Lua Nova.",
+  "num": 532,
+  "pub": "Intrínseca",
+  "year": "7 de agosto de 2007"
+}
