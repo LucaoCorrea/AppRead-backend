@@ -50,6 +50,10 @@ public class BookService {
         return repository.findAll();
     }
 
+    public void findId(Integer id) {
+        repository.findById(id);
+    }
+
     public void delete(Integer id) {
         repository.deleteById(id);
     }

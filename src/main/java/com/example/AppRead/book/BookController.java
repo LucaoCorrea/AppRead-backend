@@ -26,9 +26,16 @@ public class BookController {
         return ResponseEntity.ok(service.findAll());
     }
 
+
     @GetMapping("/search")
     public ResponseEntity<List<Book>> getBookByName(String name, String write) {
         return ResponseEntity.ok(service.findBySearch(name, write));
+    }
+
+    @GetMapping("/")
+    public ResponseEntity<List<Book>> getBookById(@PathVariable Integer id) {
+        service.findId(id);
+        return ResponseEntity.noContent().build();
     }
 
     @PutMapping
