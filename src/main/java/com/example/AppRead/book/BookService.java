@@ -2,6 +2,7 @@ package com.example.AppRead.book;
 
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class BookService {
+    @Autowired
     private final BookRepository repository;
     private BookRequest request;
 
@@ -50,9 +52,12 @@ public class BookService {
         return repository.findAll();
     }
 
-    public void findId(Integer id) {
-        repository.findById(id);
+
+
+    public Optional<Book> findIdBook(Integer id) {
+        return repository.findById(id);
     }
+
 
     public void delete(Integer id) {
         repository.deleteById(id);

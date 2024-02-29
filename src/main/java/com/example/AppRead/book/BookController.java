@@ -7,7 +7,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/book")
@@ -21,7 +23,7 @@ public class BookController {
         return ResponseEntity.accepted().build();
     }
 
-    @GetMapping
+    @GetMapping()
     public ResponseEntity<List<Book>> getAllBooks() {
         return ResponseEntity.ok(service.findAll());
     }
@@ -32,10 +34,9 @@ public class BookController {
         return ResponseEntity.ok(service.findBySearch(name, write));
     }
 
-    @GetMapping("/")
-    public ResponseEntity<List<Book>> getBookById(@PathVariable Integer id) {
-        service.findId(id);
-        return ResponseEntity.noContent().build();
+    @GetMapping("/{id}")
+    public ResponseEntity <Optional<Book>> getBookById(@PathVariable Integer id) {
+        return ResponseEntity.ok(service.findIdBook(id));
     }
 
     @PutMapping
