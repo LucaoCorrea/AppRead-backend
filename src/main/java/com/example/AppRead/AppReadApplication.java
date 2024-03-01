@@ -64,6 +64,18 @@ public class AppReadApplication {
 					.year("26 de junho de 1997")
 					.build();
 			System.out.println(controller.save(book));
+
+			var book2 = BookRequest.builder()
+					.name("Crepúsculo Eclipse")
+					.pdf("https://cabana-on.com/Ler/wp-content/uploads/2017/08/Stephenie-Meyer-Eclipse.pdf")
+					.cover("https://m.media-amazon.com/images/I/31pJMbdC6kL._SY445_SX342_.jpg")
+					.writer("Stephenie Meyer")
+					.description("Eclipse é o terceiro livro da série Twilight de Stephenie Meyer, precedido por Crepúsculo e Lua Nova.")
+					.num(532)
+					.pub("Intrínseca")
+					.year("7 de agosto de 2007")
+					.build();
+			System.out.println(controller.save(book2));
 		};
 	}
 
